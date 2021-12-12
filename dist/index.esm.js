@@ -1932,31 +1932,31 @@ var connectors = [
         icon: Icon$H,
         connectorId: "injected",
     },
-    {
-        title: "TrustWallet",
-        icon: Icon$K,
-        connectorId: "injected",
-    },
-    {
-        title: "MathWallet",
-        icon: Icon$I,
-        connectorId: "injected",
-    },
-    {
-        title: "TokenPocket",
-        icon: Icon$J,
-        connectorId: "injected",
-    },
+    // {
+    //     title: "TrustWallet",
+    //     icon: Icon$K,
+    //     connectorId: "injected",
+    // },
+    // {
+    //     title: "MathWallet",
+    //     icon: Icon$I,
+    //     connectorId: "injected",
+    // },
+    // {
+    //     title: "TokenPocket",
+    //     icon: Icon$J,
+    //     connectorId: "injected",
+    // },
     {
         title: "WalletConnect",
         icon: Icon$L,
         connectorId: "walletconnect",
     },
-    {
-        title: "Binance Chain Wallet",
-        icon: Icon$M,
-        connectorId: "bsc",
-    },
+    // {
+    //     title: "Binance Chain Wallet",
+    //     icon: Icon$M,
+    //     connectorId: "bsc",
+    // },
 ];
 var localStorageKey = "accountStatus";
 
@@ -1977,9 +1977,11 @@ var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
         connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
-        React.createElement(HelpLink, { href: "https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain", external: true },
-            React.createElement(Icon$o, { color: "primary", mr: "6px" }),
-            "Learn how to connect")));
+        // React.createElement(HelpLink, { href: "https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain", external: true },
+        //     React.createElement(Icon$o, { color: "primary", mr: "6px" }),
+        //     "Learn how to connect")
+            )
+        );
 };
 var templateObject_1$z;
 
@@ -2020,7 +2022,7 @@ var AccountModal = function (_a) {
     return (React.createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React.createElement(Text, { fontSize: "20px", bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } }, account),
         React.createElement(Flex, { mb: "32px" },
-            React.createElement(LinkExternal, { small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
+            React.createElement(LinkExternal, { small: true, href: "https://optimistic.etherscan.io/address/" + account, mr: "16px" }, "View on EtherScan"),
             React.createElement(CopyToClipboard, { toCopy: account }, "Copy Address")),
         React.createElement(Flex, { justifyContent: "center" },
             React.createElement(Button, { size: "sm", variant: "secondary", onClick: function () {
